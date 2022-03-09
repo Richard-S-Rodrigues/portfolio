@@ -1,0 +1,72 @@
+.container {
+  margin: 1em 0;
+  display: block;
+}
+
+.container main {
+  width: 100%;
+  margin: 2em 0;
+  background: #333842;
+  box-shadow: 4px 4px 15px 2px black;
+  border-radius: 0.25rem;
+  transition: all 0.5s;
+}
+
+.imageContainer img {
+  width: 100%;
+  border-radius: 0.25rem;
+}
+
+.descriptionContainer {
+  margin: 1em auto;
+  padding: 0 1em;
+}
+
+.actionsContainer {
+  display: flex;
+}
+
+.actionsContainer a {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.github {
+  border: 1px solid #1d2026;
+  background: #1d2026;
+  color: #fff;
+  padding: 1em;
+  border-radius: 0.25rem;
+}
+
+.live {
+  border: 1px solid #990000;
+  background: #990000;
+  color: #fff;
+  padding: 1em;
+  border-radius: 0.25rem;
+}
+
+@media (min-width: 740px) {
+  .container {
+    display: flex;
+  }
+
+  .container main {
+    margin: auto;
+  }
+
+  .container main:hover {
+    transform: translatey(-1rem);
+  }
+
+  .container main:not(:first-child) {
+    margin-left: -4rem;
+  }
+
+  .container main:hover ~ main {
+    transform: translatex(5rem);
+  }
+}

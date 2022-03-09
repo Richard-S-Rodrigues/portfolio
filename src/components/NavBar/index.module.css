@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container nav {
+  display: flex;
+}
+
+.container nav a {
+  margin-left: 1em;
+}
+
+@media (min-width: 388px) {
+  .container {
+    width: 28.2em;
+  }
+}
