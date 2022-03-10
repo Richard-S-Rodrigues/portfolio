@@ -26,13 +26,13 @@ const Home = () => (
           <h2>richardsouzarodrigues555@gmail.com</h2>
           <div className={styles.socials}>
             <a href="https://github.com/Richard-S-Rodrigues" target="_blank">
-              <AiFillGithub size={30} />{" "}
+              <AiFillGithub size={30} style={{ color: "#fff" }} />{" "}
             </a>
             <a
               href="https://www.linkedin.com/in/richard-s-rodrigues/"
               target="_blank"
             >
-              <AiFillLinkedin size={30} />{" "}
+              <AiFillLinkedin size={30} style={{ color: "#fff" }} />{" "}
             </a>
           </div>
         </section>
