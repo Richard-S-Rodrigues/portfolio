@@ -4,9 +4,10 @@
   width: 80%;
 }
 
-.featuredProjectsContainer,
-.featuredBlogPostsContainer {
-  margin: 4em auto;
+@media (min-width: 609px) {
+  .container {
+    width: 60%;
+  }
 }
 
 .aboutContainer {
@@ -18,12 +19,47 @@
   margin: 1em 0;
 }
 
-.contact a {
-  margin: 0 0.2em;
+.contactContainer,
+.featuredProjectsContainer,
+.featuredBlogPostsContainer {
+  margin: 6em 0;
 }
 
-@media (min-width: 609px) {
-  .container {
-    width: 60%;
-  }
+.contactContainer header,
+.featuredProjectsContainer header,
+.featuredBlogPostsContainer header {
+  text-align: center;
+}
+
+.contactContainer header {
+  margin-bottom: 2em;
+}
+
+.contactContainer header span,
+.featuredProjectsContainer header span,
+.featuredBlogPostsContainer header span {
+  display: inline-block;
+  width: 10em;
+  height: 0.2em;
+  background-color: #ddd;
+}
+
+.contactContainer h2 {
+  text-align: center;
+  word-break: break-all;
+
+  /* Non standard for WebKit */
+  word-break: break-word;
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+.socials {
+  width: 6.5em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
 }

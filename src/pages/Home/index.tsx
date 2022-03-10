@@ -7,41 +7,52 @@ import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import styles from "./index.module.css";
 
 const Home = () => (
-  <div className={styles.container}>
+  <>
     <Header />
-    <main>
-      <section className={styles.aboutContainer}>
-        <p>
-          I'm an enthusiastic programmer passionate by technology. Focused on
-          Web development, i like to challenge myself building projects and
-          improving a skill everyday.
-        </p>
-        <p className={styles.contact}>
-          Find me on{" "}
-          <a href="https://github.com/Richard-S-Rodrigues" target="_blank">
-            <AiFillGithub size={25} />{" "}
-          </a>
-          <a
-            href="https://www.linkedin.com/in/richard-s-rodrigues/"
-            target="_blank"
-          >
-            <AiFillLinkedin size={25} />{" "}
-          </a>
-          <span>
-            or send me an E-mail at: richardsouzarodrigues555@gmail.com{" "}
-          </span>
-        </p>
-      </section>
-      <section className={styles.featuredProjectsContainer}>
-        <h2>Featured Projects</h2>
-        <FeaturedProjects />
-      </section>
-      <section className={styles.featuredBlogPostsContainer}>
-        <h2>Featured Blog Posts</h2>
-        <FeaturedBlogPosts />
-      </section>
-    </main>
-  </div>
+    <div className={styles.container}>
+      <main>
+        <section className={styles.aboutContainer}>
+          <p>
+            I'm an enthusiastic programmer passionate by technology. Focused on
+            Web development, i like to challenge myself building projects and
+            improving or learning a skill everyday.
+          </p>
+        </section>
+        <section className={styles.contactContainer}>
+          <header>
+            <h1>Contact</h1>
+            <span />
+          </header>
+          <h2>richardsouzarodrigues555@gmail.com</h2>
+          <div className={styles.socials}>
+            <a href="https://github.com/Richard-S-Rodrigues" target="_blank">
+              <AiFillGithub size={30} />{" "}
+            </a>
+            <a
+              href="https://www.linkedin.com/in/richard-s-rodrigues/"
+              target="_blank"
+            >
+              <AiFillLinkedin size={30} />{" "}
+            </a>
+          </div>
+        </section>
+        <section className={styles.featuredProjectsContainer}>
+          <header>
+            <h1>Featured Projects</h1>
+            <span />
+          </header>
+          <FeaturedProjects />
+        </section>
+        <section className={styles.featuredBlogPostsContainer}>
+          <header>
+            <h1>Featured Blog Posts</h1>
+            <span />
+          </header>
+          <FeaturedBlogPosts />
+        </section>
+      </main>
+    </div>
+  </>
 );
 
 export default Home;

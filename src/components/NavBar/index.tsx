@@ -4,10 +4,56 @@ import styles from "./index.module.css";
 const NavBar = () => (
   <div className={styles.container}>
     <nav>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-      <Link to="/blog">Blog</Link>
-      <Link to="/projects">Projects</Link>
+      <ul>
+        <li>
+          <Link
+            to="/"
+            style={
+              window.location.pathname == "/"
+                ? { color: "var(--color-blue)" }
+                : {}
+            }
+          >
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/about"
+            style={
+              window.location.pathname == "/about"
+                ? { color: "var(--color-blue)" }
+                : {}
+            }
+          >
+            About
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/blog"
+            style={
+              window.location.pathname == "/blog"
+                ? { color: "var(--color-blue)" }
+                : {}
+            }
+          >
+            Blog
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/projects"
+            style={
+              window.location.pathname == "/projects"
+                ? { color: "var(--color-blue)" }
+                : {}
+            }
+          >
+            Projects
+          </Link>
+        </li>
+      </ul>
     </nav>
   </div>
 );

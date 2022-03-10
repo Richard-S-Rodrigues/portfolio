@@ -1,6 +1,7 @@
 .container header {
   display: block;
   text-align: center;
+  margin-top: 4em;
 }
 
 .container header img {
@@ -9,18 +10,8 @@
   border-radius: 50%;
 }
 
-@media (min-width: 388px) {
+@media (min-width: 400px) {
   .container {
     width: 100%;
-  }
-
-  .container header {
-    display: flex;
-    align-items: center;
-    text-align: left;
-  }
-
-  .container header h1 {
-    margin-left: 1em;
   }
 }
