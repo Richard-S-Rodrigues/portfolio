@@ -1,17 +1,17 @@
 .container {
   display: block;
   margin: 2em auto;
-  width: 80%;
+  width: 90%;
 }
 
 @media (min-width: 609px) {
   .container {
-    width: 60%;
+    width: 35em;
   }
 }
 
 .aboutContainer {
-  display: block;
+  display: blockel;
   margin: 2em 0;
 }
 
@@ -19,16 +19,26 @@
   margin: 1em 0;
 }
 
+.navContainer nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navContainer nav ul a {
+  display: flex;
+  align-items: center;
+  color: var(--color-grey);
+}
+
+.navContainer nav ul a svg {
+  color: var(--color-blue);
+  margin-right: 0.5em;
+}
+
 .contactContainer,
 .featuredProjectsContainer,
 .featuredBlogPostsContainer {
   margin: 6em 0;
-}
-
-.contactContainer header,
-.featuredProjectsContainer header,
-.featuredBlogPostsContainer header {
-  text-align: center;
 }
 
 .contactContainer header {
@@ -44,22 +54,19 @@
   background-color: #ddd;
 }
 
-.contactContainer h2 {
-  text-align: center;
-  word-break: break-all;
-
-  /* Non standard for WebKit */
-  word-break: break-word;
-
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
+.contactContainer ul li {
+  margin-bottom: 1em;
 }
 
-.socials {
-  width: 6.5em;
-  margin: 0 auto;
+.contactContainer ul li a,
+.contactContainer ul li {
   display: flex;
-  justify-content: space-between;
-  margin-top: 1em;
+  align-items: center;
+}
+
+.contactContainer ul li a svg,
+.contactContainer ul li svg {
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 1em;
 }
