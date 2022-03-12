@@ -70,3 +70,8 @@
   height: 1.5em;
   margin-right: 1em;
 }
+
+.mailContact span {
+  width: 80%;
+  word-break: break-all;
+}

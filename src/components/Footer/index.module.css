@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.container small {
+  color: var(--color-grey);
+}

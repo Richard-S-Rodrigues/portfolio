@@ -1,6 +1,7 @@
 import Header from "../../components/Header";
 import FeaturedProjects from "../../components/FeaturedProjects";
 import FeaturedBlogPosts from "../../components/FeaturedBlogPosts";
+import Footer from "../../components/Footer";
 
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
 import { CgCodeSlash, CgNotes } from "react-icons/cg";
@@ -65,8 +66,8 @@ const Home = () => (
               Richard-S-Rodrigues
             </a>
           </li>
-          <li>
-            <AiOutlineMail /> richardsouzarodrigues555@gmail.com
+          <li className={styles.mailContact}>
+            <AiOutlineMail /> <span>richardsouzarodrigues555@gmail.com</span>
           </li>
         </ul>
       </section>
@@ -85,6 +86,7 @@ const Home = () => (
         <FeaturedBlogPosts />
       </section>
     </main>
+    <Footer />
   </div>
 );
 
