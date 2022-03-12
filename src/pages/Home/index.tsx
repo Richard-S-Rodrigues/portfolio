@@ -1,6 +1,6 @@
 import Header from "../../components/Header";
-import FeaturedProjects from "../../components/FeaturedProjects";
-import FeaturedBlogPosts from "../../components/FeaturedBlogPosts";
+import ProjectsCard from "../../components/ProjectsCard";
+import PostsCard from "../../components/PostsCard";
 import Footer from "../../components/Footer";
 
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
@@ -76,14 +76,14 @@ const Home = () => (
           <h1>Featured Projects</h1>
           <span />
         </header>
-        <FeaturedProjects />
+        <ProjectsCard />
       </section>
       <section className={styles.featuredBlogPostsContainer}>
         <header>
           <h1>Featured Blog Posts</h1>
           <span />
         </header>
-        <FeaturedBlogPosts />
+        <PostsCard />
       </section>
     </main>
     <Footer />

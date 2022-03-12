@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
 
-import { AiFillGithub } from "react-icons/ai";
-
 import styles from "./index.module.css";
 
-const FeaturedProjects = () => (
+const ProjectsCard = () => (
   <div className={styles.container}>
     <main>
       <section className={styles.imageContainer}>
@@ -60,4 +58,4 @@ const FeaturedProjects = () => (
   </div>
 );
 
-export default FeaturedProjects;
+export default ProjectsCard;

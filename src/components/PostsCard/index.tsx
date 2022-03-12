@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import styles from "./index.module.css";
 
-const FeaturedBlogPosts = () => (
+const PostsCard = () => (
   <div className={styles.container}>
     <div className={styles.postCard}>
       <Link to="/">
@@ -43,4 +43,4 @@ const FeaturedBlogPosts = () => (
   </div>
 );
 
-export default FeaturedBlogPosts;
+export default PostsCard;
