@@ -1,20 +1,20 @@
 .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+  grid-gap: 2em;
   margin: 1em 0;
-  display: block;
 }
 
 .container main {
   width: 100%;
-  margin: 2em 0;
   background: #333842;
   box-shadow: 4px 4px 15px 2px black;
-  border-radius: 0.25rem;
-  transition: all 0.5s;
+  border-radius: 1rem;
 }
 
 .imageContainer img {
   width: 100%;
-  border-radius: 0.25rem;
+  border-radius: 1rem;
 }
 
 .descriptionContainer {
@@ -31,42 +31,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.github {
-  border: 1px solid #1d2026;
-  background: #1d2026;
-  color: #fff;
   padding: 1em;
-  border-radius: 0.25rem;
-}
-
-.live {
-  border: 1px solid #990000;
-  background: #990000;
+  border-radius: 0 0 1rem 1rem;
+  background: var(--color-grey);
   color: #fff;
-  padding: 1em;
-  border-radius: 0.25rem;
+  transition: all 0.8s;
 }
 
-@media (min-width: 740px) {
-  .container {
-    display: flex;
-  }
-
-  .container main {
-    margin: auto;
-  }
-
-  .container main:hover {
-    transform: translatey(-1rem);
-  }
-
-  .container main:not(:first-child) {
-    margin-left: -4rem;
-  }
-
-  .container main:hover ~ main {
-    transform: translatex(5rem);
-  }
+.actionsContainer a:hover {
+  background: var(--color-blue);
 }
