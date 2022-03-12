@@ -1,57 +1,34 @@
+import { AiFillGithub } from "react-icons/ai";
+import { CgCodeSlash, CgNotes } from "react-icons/cg";
 import { Link } from "react-router-dom";
+
+import profilePhoto from "../../assets/profile.jpg";
 import styles from "./index.module.css";
 
 const NavBar = () => (
   <div className={styles.container}>
     <nav>
+      <Link to="/" className={styles.imageContainer}>
+        <img src={profilePhoto} alt="" />
+      </Link>
       <ul>
         <li>
-          <Link
-            to="/"
-            style={
-              window.location.pathname == "/"
-                ? { color: "var(--color-blue)" }
-                : {}
-            }
-          >
-            Home
+          <Link to="/blog">
+            <CgNotes /> Blog
           </Link>
         </li>
         <li>
-          <Link
-            to="/about"
-            style={
-              window.location.pathname == "/about"
-                ? { color: "var(--color-blue)" }
-                : {}
-            }
-          >
-            About
+          <Link to="/projects">
+            <CgCodeSlash /> Projects
           </Link>
         </li>
         <li>
-          <Link
-            to="/blog"
-            style={
-              window.location.pathname == "/blog"
-                ? { color: "var(--color-blue)" }
-                : {}
-            }
+          <a
+            href="https://github.com/Richard-S-Rodrigues/portfolio"
+            target="_blank"
           >
-            Blog
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/projects"
-            style={
-              window.location.pathname == "/projects"
-                ? { color: "var(--color-blue)" }
-                : {}
-            }
-          >
-            Projects
-          </Link>
+            <AiFillGithub /> Source
+          </a>
         </li>
       </ul>
     </nav>
