@@ -1,5 +1,18 @@
-.container ul li {
-  background: #3f4552;
+.postCard {
+  background-color: var(--color-darker-grey);
+  margin-top: 1em;
   padding: 1em;
-  margin: 1em 0;
+  border-radius: 0.25rem;
+}
+
+.postCard a {
+  color: #fff;
+}
+
+.postCard a div {
+  color: var(--color-grey);
+}
+
+.postCard a p {
+  margin-top: 1em;
 }

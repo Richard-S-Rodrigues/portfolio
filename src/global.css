@@ -6,13 +6,15 @@
 
 :root {
   --color-blue: #0077b5;
+  --color-dark: #222733;
   --color-grey: #5c6987;
+  --color-darker-grey: #31384a;
 }
 
 html,
 body {
   font-family: "Merriweather Sans", sans-serif;
-  background-color: #222733;
+  background-color: var(--color-dark);
   color: #fff;
 }
 
