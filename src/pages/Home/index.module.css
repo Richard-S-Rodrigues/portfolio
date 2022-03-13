@@ -18,13 +18,14 @@
   justify-content: space-between;
 }
 
-.navContainer nav ul a {
+.navContainer nav ul li a {
   display: flex;
   align-items: center;
+  flex-direction: column;
   color: var(--color-grey);
 }
 
-.navContainer nav ul a svg {
+.navContainer nav ul li a svg {
   color: var(--color-blue);
   margin-right: 0.5em;
 }
@@ -77,5 +78,11 @@
 @media (min-width: 609px) {
   .container {
     width: 40em;
+  }
+}
+
+@media (min-width: 440px) {
+  .navContainer nav ul li a {
+    flex-direction: row;
   }
 }
