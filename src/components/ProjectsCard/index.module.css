@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
   grid-gap: 2em;
-  margin: 1em 0;
+  margin: 5em 0;
 }
 
 .container main {
@@ -40,4 +40,10 @@
 
 .actionsContainer a:hover {
   background: var(--color-blue);
+}
+
+@media (min-width: 609px) {
+  .container {
+    width: 40em;
+  }
 }

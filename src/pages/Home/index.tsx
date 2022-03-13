@@ -1,7 +1,6 @@
 import Header from "../../components/Header";
 import ProjectsCard from "../../components/ProjectsCard";
 import PostsCard from "../../components/PostsCard";
-import Footer from "../../components/Footer";
 
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
 import { CgCodeSlash, CgNotes } from "react-icons/cg";
@@ -86,7 +85,6 @@ const Home = () => (
         <PostsCard />
       </section>
     </main>
-    <Footer />
   </div>
 );
 

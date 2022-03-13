@@ -4,12 +4,6 @@
   width: 90%;
 }
 
-@media (min-width: 609px) {
-  .container {
-    width: 40em;
-  }
-}
-
 .aboutContainer {
   display: blockel;
   margin: 2em 0;
@@ -74,4 +68,10 @@
 .mailContact span {
   width: 80%;
   word-break: break-all;
+}
+
+@media (min-width: 609px) {
+  .container {
+    width: 40em;
+  }
 }

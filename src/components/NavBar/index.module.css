@@ -1,17 +1,31 @@
+.container {
+  width: 100%;
+  position: fixed;
+}
+
 .container nav {
-  width: 90%;
-  display: block;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
+  padding: 0.5em;
+  background: var(--color-darker-grey);
+  border-radius: 0.25rem;
 }
 
 .imageContainer img {
-  width: 4rem;
-  height: 4rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
 }
 
 .container nav ul {
   display: flex;
+}
+
+.container nav ul li:not(:last-child) {
+  margin-right: 1em;
 }
 
 .container nav ul li svg {
@@ -20,4 +34,21 @@
 
 .container nav ul li a {
   color: var(--color-grey);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 600px) {
+  .container nav {
+    width: 40em;
+  }
+
+  .container nav ul li a {
+    flex-direction: row;
+  }
+
+  .container nav ul li svg {
+    margin-right: 0.5em;
+  }
 }

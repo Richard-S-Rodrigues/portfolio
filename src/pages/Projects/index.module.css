@@ -3,3 +3,9 @@
   width: 80%;
   margin: 0 auto;
 }
+
+@media (min-width: 609px) {
+  .container {
+    width: 40em;
+  }
+}

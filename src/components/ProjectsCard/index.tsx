@@ -16,7 +16,7 @@ const ProjectsCard = () => (
           </article>
         </div>
         <div className={styles.actionsContainer}>
-          <Link to="/">View details</Link>
+          <Link to="/projects">View details</Link>
         </div>
       </section>
     </main>
@@ -34,7 +34,7 @@ const ProjectsCard = () => (
         </div>
 
         <div className={styles.actionsContainer}>
-          <Link to="/">View details</Link>
+          <Link to="/projects">View details</Link>
         </div>
       </section>
     </main>
@@ -51,7 +51,7 @@ const ProjectsCard = () => (
           </article>
         </div>
         <div className={styles.actionsContainer}>
-          <Link to="/">View details</Link>
+          <Link to="/projects">View details</Link>
         </div>
       </section>
     </main>
