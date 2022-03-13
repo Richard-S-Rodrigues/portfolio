@@ -70,6 +70,10 @@
   word-break: break-all;
 }
 
+.featuredProjectsContainer header {
+  margin-bottom: 1em;
+}
+
 @media (min-width: 609px) {
   .container {
     width: 40em;
