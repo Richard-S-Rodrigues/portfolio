@@ -1,61 +1,62 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+import { getProjects } from "../../services/getProjects";
 
 import styles from "./index.module.css";
 
-const ProjectsCard = () => (
-  <div className={styles.container}>
-    <main>
-      <section className={styles.imageContainer}>
-        <img src="https://picsum.photos/200" alt="" />
-      </section>
-      <section>
-        <div className={styles.descriptionContainer}>
-          <h3>Project's name</h3>
-          <article>
-            <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
-          </article>
-        </div>
-        <div className={styles.actionsContainer}>
-          <Link to="/projects">View details</Link>
-        </div>
-      </section>
-    </main>
+interface IProjectsData {
+  id: string;
+  name: string;
+  description: string;
+  image: {
+    id: string;
+    fileName: string;
+    height: number;
+    width: number;
+    url: string;
+  };
+  projectUrl: string;
+  githubUrl: string;
+  updatedAt: string;
+  publishedAt: string;
+  createdAt: string;
+}
 
-    <main>
-      <section className={styles.imageContainer}>
-        <img src="https://picsum.photos/200" alt="" />
-      </section>
-      <section>
-        <div className={styles.descriptionContainer}>
-          <h3>Project's name</h3>
-          <article>
-            <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
-          </article>
-        </div>
+const ProjectsCard = () => {
+  const [projects, setProjects] = useState([] as IProjectsData[]);
 
-        <div className={styles.actionsContainer}>
-          <Link to="/projects">View details</Link>
-        </div>
-      </section>
-    </main>
+  useEffect(() => {
+    const getData = async () => {
+      const response = await getProjects();
+      console.log(response.projects);
+      setProjects(response.projects);
+    };
+    getData();
+  }, []);
 
-    <main>
-      <section className={styles.imageContainer}>
-        <img src="https://picsum.photos/200" alt="" />
-      </section>
-      <section>
-        <div className={styles.descriptionContainer}>
-          <h3>Project's name</h3>
-          <article>
-            <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
-          </article>
-        </div>
-        <div className={styles.actionsContainer}>
-          <Link to="/projects">View details</Link>
-        </div>
-      </section>
-    </main>
-  </div>
-);
+  return (
+    <div className={styles.container}>
+      {projects.map((project) => (
+        <main key={project.id}>
+          <section className={styles.imageContainer}>
+            <img src={project.image.url} alt="" />
+          </section>
+          <section>
+            <div className={styles.descriptionContainer}>
+              <h3>{project.name}</h3>
+              <article>
+                <p>{project.description}</p>
+              </article>
+            </div>
+            <div className={styles.actionsContainer}>
+              <Link to={`/projects/${project.id}`}>View details</Link>
+            </div>
+          </section>
+        </main>
+      ))}
+    </div>
+  );
+};
 
 export default ProjectsCard;
