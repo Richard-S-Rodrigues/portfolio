@@ -29,7 +29,6 @@ const ProjectsCard = () => {
   useEffect(() => {
     const getData = async () => {
       const response = await getProjects();
-      console.log(response.projects);
       setProjects(response.projects);
     };
     getData();
