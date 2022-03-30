@@ -30,6 +30,38 @@
   margin-right: 0.5em;
 }
 
+.skillsContainer {
+  margin-top: 4em;
+}
+
+.skillsContainer div {
+  display: block;
+}
+
+.skillsList {
+  margin: 1em 0;
+}
+
+.skillsList ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.5em;
+}
+
+.skillsList ul li {
+  background: #151b24;
+  padding: 1em;
+  text-align: center;
+}
+
+.skillsDescription h2 {
+  margin-top: 2em;
+}
+
+.skillsDescription article {
+  margin: 2em 0;
+}
+
 .contactContainer,
 .featuredProjectsContainer,
 .featuredBlogPostsContainer {
@@ -40,6 +72,7 @@
   margin-bottom: 2em;
 }
 
+.skillsContainer header span,
 .contactContainer header span,
 .featuredProjectsContainer header span,
 .featuredBlogPostsContainer header span {

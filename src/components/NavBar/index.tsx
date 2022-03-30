@@ -1,5 +1,5 @@
-import { AiFillGithub } from "react-icons/ai";
 import { CgCodeSlash, CgNotes } from "react-icons/cg";
+import { MdSpeakerNotes } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 import ReactTooltip from "react-tooltip";
@@ -30,12 +30,10 @@ const NavBar = () => (
           </Link>
         </li>
         <li>
-          <a
-            href="https://github.com/Richard-S-Rodrigues/portfolio"
-            target="_blank"
-          >
-            <AiFillGithub /> Source
-          </a>
+          <Link to="/about">
+            <MdSpeakerNotes />
+            About
+          </Link>
         </li>
       </ul>
     </nav>

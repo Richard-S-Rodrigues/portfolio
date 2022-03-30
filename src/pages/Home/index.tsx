@@ -1,11 +1,11 @@
+import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import ProjectsCard from "../../components/ProjectsCard";
 import PostsCard from "../../components/PostsCard";
 
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
 import { CgCodeSlash, CgNotes } from "react-icons/cg";
-
-import { Link } from "react-router-dom";
+import { MdSpeakerNotes } from "react-icons/md";
 
 import styles from "./index.module.css";
 
@@ -34,15 +34,43 @@ const Home = () => (
               </Link>
             </li>
             <li>
-              <a
-                href="https://github.com/Richard-S-Rodrigues/portfolio"
-                target="_blank"
-              >
-                <AiFillGithub /> Source
-              </a>
+              <Link to="/about">
+                <MdSpeakerNotes /> About
+              </Link>
             </li>
           </ul>
         </nav>
+      </section>
+      <section className={styles.skillsContainer}>
+        <header>
+          <h1>My skills</h1>
+          <span />
+        </header>
+        <div>
+          <section className={styles.skillsList}>
+            <ul>
+              <li>JavaScript</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Nodejs</li>
+              <li>Nextjs</li>
+            </ul>
+          </section>
+          <section className={styles.skillsDescription}>
+            <h2>I love learning by building stuffs</h2>
+            <article>
+              <p>
+                Since the first time i start learning about programming, i was
+                always fascinated by the idea of creating something and
+                understand how things works. And the way i learn those things is
+                putting in practice by building fun projects.
+              </p>
+            </article>
+            <Link to="/about">Read more about me</Link>
+          </section>
+        </div>
       </section>
       <section className={styles.contactContainer}>
         <header>
