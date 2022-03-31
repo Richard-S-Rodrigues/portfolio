@@ -5,7 +5,6 @@ import PostsCard from "../../components/PostsCard";
 
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
 import { CgCodeSlash, CgNotes } from "react-icons/cg";
-import { MdSpeakerNotes } from "react-icons/md";
 
 import styles from "./index.module.css";
 
@@ -31,11 +30,6 @@ const Home = () => (
             <li>
               <Link to="/projects">
                 <CgCodeSlash /> Projects
-              </Link>
-            </li>
-            <li>
-              <Link to="/about">
-                <MdSpeakerNotes /> About
               </Link>
             </li>
           </ul>
@@ -68,7 +62,6 @@ const Home = () => (
                 putting in practice by building fun projects.
               </p>
             </article>
-            <Link to="/about">Read more about me</Link>
           </section>
         </div>
       </section>

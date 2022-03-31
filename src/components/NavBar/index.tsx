@@ -1,5 +1,4 @@
 import { CgCodeSlash, CgNotes } from "react-icons/cg";
-import { MdSpeakerNotes } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 import ReactTooltip from "react-tooltip";
@@ -27,12 +26,6 @@ const NavBar = () => (
         <li>
           <Link to="/projects">
             <CgCodeSlash /> Projects
-          </Link>
-        </li>
-        <li>
-          <Link to="/about">
-            <MdSpeakerNotes />
-            About
           </Link>
         </li>
       </ul>
