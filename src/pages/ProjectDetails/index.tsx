@@ -38,20 +38,26 @@ const ProjectDetails = () => {
                   dignissim blandit eu eu ex. Ut porttitor ligula nec eleifend
                   malesuada. Ut quis posuere ante, sit amet dignissim urna.
                   Curabitur orci tortor, semper commodo ultricies vulputate,
-                  commodo at ligula. Aenean sollicitudin risus non ex maximus
-                  ultrices. Morbi malesuada vitae lorem eget suscipit. Vivamus
-                  elementum pretium congue. Curabitur finibus nibh quis sem
-                  aliquam suscipit. Aenean dapibus ex nunc, eget commodo nisl
-                  aliquet nec. Suspendisse facilisis mollis orci, quis cursus
-                  augue condimentum sit amet. Etiam faucibus orci sit amet leo
-                  sodales, et scelerisque ligula volutpat. Vestibulum convallis
-                  vitae metus ac tempor. Aenean consectetur metus magna, non
-                  bibendum eros pretium eget. Duis ultricies vehicula leo.{" "}
                 </p>
               </article>
             </div>
+            <div className={styles.typeAndStackContainer}>
+              <section>
+                <h3>Type</h3>
+                <span>Project type</span>
+              </section>
+              <section className={styles.techStackList}>
+                <h3>Tech stack</h3>
+                <ul>
+                  <li>JavaScript</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Reactjs</li>
+                </ul>
+              </section>
+            </div>
           </section>
-          <section>
+          <section className={styles.bodyContent}>
             <h2>How it works</h2>
             <small>Project functionality</small>
           </section>
