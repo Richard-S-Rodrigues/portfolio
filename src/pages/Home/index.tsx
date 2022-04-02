@@ -35,36 +35,6 @@ const Home = () => (
           </ul>
         </nav>
       </section>
-      <section className={styles.skillsContainer}>
-        <header>
-          <h1>My skills</h1>
-          <span />
-        </header>
-        <div>
-          <section className={styles.skillsList}>
-            <ul>
-              <li>JavaScript</li>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>React</li>
-              <li>TypeScript</li>
-              <li>Nodejs</li>
-              <li>Nextjs</li>
-            </ul>
-          </section>
-          <section className={styles.skillsDescription}>
-            <h2>I love learning by building stuffs</h2>
-            <article>
-              <p>
-                Since the first time i start learning about programming, i was
-                always fascinated by the idea of creating something and
-                understand how things works. And the way i learn those things is
-                putting in practice by building fun projects.
-              </p>
-            </article>
-          </section>
-        </div>
-      </section>
       <section className={styles.contactContainer}>
         <header>
           <h1>Contact</h1>
