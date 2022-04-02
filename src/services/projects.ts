@@ -30,4 +30,32 @@ const getProjects = async () => {
   return response;
 };
 
-export { getProjects };
+const getProject = async (id: string) => {
+  const query = gql`
+    query MyQuery {
+      projects(where: {id: "${id}"}) {
+        id
+        name
+        description
+        image {
+          id
+          fileName
+          height
+          width
+          url
+        }
+        projectUrl
+        githubUrl
+        projectDetails
+        projectStack
+        projectType
+      }
+    }
+  `;
+
+  const response = await request(graphcmsApi, query);
+
+  return response;
+};
+
+export { getProjects, getProject };
