@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getBlogPosts } from "../../services/blogPosts";
+import { formatDate } from "../../utils/formatDate";
 
 import styles from "./index.module.css";
 
@@ -26,17 +27,33 @@ const PostsCard = () => {
 
   return (
     <div className={styles.container}>
-      {posts.map(({ id, title, description, postSlug, publishedAt }) => (
-        <div className={styles.postCard} key={id}>
-          <Link to={`/blog/${postSlug}`}>
-            <h3>{title}</h3>
-            <div>
-              <small>{publishedAt}</small>
-            </div>
-            <p>{description}</p>
-          </Link>
+      {!posts.length && (
+        <div
+          style={{
+            marginTop: "1.5em",
+            fontWeight: "600",
+            fontSize: "1.3em",
+            color: "var(--color-grey)"
+          }}
+        >
+          Posts coming soon...
         </div>
-      ))}
+      )}
+      {posts.map(({ id, title, description, postSlug, publishedAt }) => {
+        const formatedDate = formatDate(new Date(publishedAt));
+
+        return (
+          <div className={styles.postCard} key={id}>
+            <Link to={`/blog/${postSlug}`}>
+              <h3>{title}</h3>
+              <div>
+                <small>{formatedDate}</small>
+              </div>
+              <p>{description}</p>
+            </Link>
+          </div>
+        );
+      })}
     </div>
   );
 };

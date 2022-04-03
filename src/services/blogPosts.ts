@@ -26,9 +26,7 @@ const getBlogPost = async (slug: string) => {
       blogPost(where: { postSlug: "${slug}" }) {
         id
         title
-        description
         bodyContent
-        postSlug
         publishedAt
       }
     }
