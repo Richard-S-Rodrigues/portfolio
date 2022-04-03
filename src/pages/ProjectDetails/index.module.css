@@ -55,8 +55,7 @@
 }
 
 .typeAndStackContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+  display: block;
   margin-top: 4em;
 }
 
@@ -81,6 +80,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .typeAndStackContainer {
+    display: flex;
+    justify-content: space-between;
   }
 
   .techStackList {

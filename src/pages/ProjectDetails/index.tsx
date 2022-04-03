@@ -90,7 +90,7 @@ const ProjectDetails = () => {
             </div>
             <div className={styles.typeAndStackContainer}>
               <section className={styles.projectType}>
-                <h3>Type</h3>
+                <h3>Project type</h3>
                 <span>{projectType}</span>
               </section>
               <section className={styles.techStackList}>
