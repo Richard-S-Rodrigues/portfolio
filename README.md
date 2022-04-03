@@ -1,4 +1,4 @@
-<h1 align="center">RichardRodriguesDev</h1>
+<h1 align="center">RichardRodriguesDEV</h1>
 
 ## ✨ Technologies
 
@@ -12,6 +12,10 @@ This project was developed with the following technologies:
 
 ## 💻 Project
 
-RichardRodriguesDev is my personal _portfolio_.
+**RichardRodriguesDEV** is my personal _portfolio_.
 
 It presents my personal blog and some of my personal projects, each with a page explaning them and showing the developing process.
+
+## Environment variables
+
+- GraphCMS endpoint: `VITE_APP_GRAPHCMS_ENDPOINT`
