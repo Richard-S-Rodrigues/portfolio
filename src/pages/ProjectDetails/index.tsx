@@ -8,6 +8,8 @@ import { AiFillGithub } from "react-icons/ai";
 import styles from "./index.module.css";
 import BodyMarkdownContent from "../../components/BodyMarkdownContent";
 
+import ReactLoading from "react-loading";
+
 interface IProjectData {
   id: string;
   name: string;
@@ -41,10 +43,13 @@ const ProjectDetails = () => {
   const [projectGithubUrl, setProjectGithubUrl] = useState("");
   const [projectDetails, setProjectDetails] = useState("");
 
+  const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
     const getData = async () => {
+      setIsLoading(true);
+
       try {
-        console.log(projectId);
         const project = (await getProject(projectId)) as IProjectData;
 
         setProjectName(project.name);
@@ -55,6 +60,8 @@ const ProjectDetails = () => {
         setProjectUrl(project.projectUrl);
         setProjectGithubUrl(project.githubUrl);
         setProjectDetails(project.projectDetails);
+
+        setIsLoading(false);
       } catch (err) {
         console.log(err);
       }
@@ -64,56 +71,70 @@ const ProjectDetails = () => {
   return (
     <>
       <NavBar />
-      <div className={styles.container}>
-        <main>
-          <section className={styles.infoContainer}>
-            <header>
-              <h1>{projectName}</h1>
-              <div className={styles.actions}>
-                <a
-                  className={styles.github}
-                  href={projectGithubUrl}
-                  target="_blank"
-                >
-                  <AiFillGithub />
-                  Code
-                </a>
-                <a className={styles.live} href={projectUrl} target="_blank">
-                  Live
-                </a>
+      {isLoading ? (
+        <div
+          style={{
+            textAlign: "center",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh"
+          }}
+        >
+          <ReactLoading />
+        </div>
+      ) : (
+        <div className={styles.container}>
+          <main>
+            <section className={styles.infoContainer}>
+              <header>
+                <h1>{projectName}</h1>
+                <div className={styles.actions}>
+                  <a
+                    className={styles.github}
+                    href={projectGithubUrl}
+                    target="_blank"
+                  >
+                    <AiFillGithub />
+                    Code
+                  </a>
+                  <a className={styles.live} href={projectUrl} target="_blank">
+                    Live
+                  </a>
+                </div>
+              </header>
+              <div className={styles.descriptionContainer}>
+                <article>
+                  <p>{projectDescription}</p>
+                </article>
               </div>
-            </header>
-            <div className={styles.descriptionContainer}>
-              <article>
-                <p>{projectDescription}</p>
-              </article>
-            </div>
-            <div className={styles.typeAndStackContainer}>
-              <section className={styles.projectType}>
-                <h3>Project type</h3>
-                <span>{projectType}</span>
-              </section>
-              <section className={styles.techStackList}>
-                <h3>Tech stack</h3>
-                <ul>
-                  {projectStack.map((tool) => (
-                    <li key={uuidv4()}>{tool}</li>
-                  ))}
-                </ul>
-              </section>
-            </div>
-          </section>
-          <section className={styles.bodyContent}>
-            <img
-              src={projectDisplayImage?.image?.url}
-              alt={projectDisplayImage.altText}
-              width={"100%"}
-              height={"100%"}
-            />
-            <BodyMarkdownContent content={projectDetails} />
-          </section>
-        </main>
-      </div>
+              <div className={styles.typeAndStackContainer}>
+                <section className={styles.projectType}>
+                  <h3>Project type</h3>
+                  <span>{projectType}</span>
+                </section>
+                <section className={styles.techStackList}>
+                  <h3>Tech stack</h3>
+                  <ul>
+                    {projectStack.map((tool) => (
+                      <li key={uuidv4()}>{tool}</li>
+                    ))}
+                  </ul>
+                </section>
+              </div>
+            </section>
+            <section className={styles.bodyContent}>
+              <img
+                src={projectDisplayImage?.image?.url}
+                alt={projectDisplayImage.altText}
+                width={"100%"}
+                height={"100%"}
+              />
+              <BodyMarkdownContent content={projectDetails} />
+            </section>
+          </main>
+        </div>
+      )}
     </>
   );
 };
