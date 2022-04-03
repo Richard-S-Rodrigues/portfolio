@@ -1,46 +1,44 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getBlogPosts } from "../../services/blogPosts";
 
 import styles from "./index.module.css";
 
-const PostsCard = () => (
-  <div className={styles.container}>
-    <div className={styles.postCard}>
-      <Link to="/">
-        <h3>Post 1 - Title</h3>
-        <div>
-          <small>15 Jan, 2022</small>
+interface IPostsData {
+  id: string;
+  title: string;
+  description: string;
+  postSlug: string;
+  publishedAt: string;
+}
+
+const PostsCard = () => {
+  const [posts, setPosts] = useState([] as IPostsData[]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const blogPosts = (await getBlogPosts()) as IPostsData[];
+
+      setPosts(blogPosts);
+    };
+    getData();
+  }, []);
+
+  return (
+    <div className={styles.container}>
+      {posts.map(({ id, title, description, postSlug, publishedAt }) => (
+        <div className={styles.postCard} key={id}>
+          <Link to={`/blog/${postSlug}`}>
+            <h3>{title}</h3>
+            <div>
+              <small>{publishedAt}</small>
+            </div>
+            <p>{description}</p>
+          </Link>
         </div>
-        <p>
-          Lorem ipsum dolor ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-          ipsum lorem ipsum lorem ipsum lorem ipsum lorem lorem lorem
-          loremloemrelorem lroe lorem loorem
-        </p>
-      </Link>
+      ))}
     </div>
-    <div className={styles.postCard}>
-      <Link to="/">
-        <h3>Post 2 - Title</h3>
-        <div>
-          <small>15 Jan, 2022</small>
-        </div>
-        <p>Lorem ipsum dolor ipsum lorem ipsum lorem ipsum lorem ipsum lorem</p>
-      </Link>
-    </div>
-    <div className={styles.postCard}>
-      <Link to="/">
-        <h3>Post 3 - Title</h3>
-        <div>
-          <small>15 Jan, 2022</small>
-        </div>
-        <p>
-          Lorem ipsum dolor ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-          ipsum lorem ipsum lorem ipsum lorem ipsum lorem lorem lorem
-          loremloemrelorem lroe lorem loorem loremloemrelorem lroe lorem loorem
-          loremloemrelorem lroe lorem loorem
-        </p>
-      </Link>
-    </div>
-  </div>
-);
+  );
+};
 
 export default PostsCard;
