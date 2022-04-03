@@ -6,29 +6,58 @@ import { v4 as uuidv4 } from "uuid";
 import NavBar from "../../components/NavBar";
 import { AiFillGithub } from "react-icons/ai";
 import styles from "./index.module.css";
+import BodyMarkdownContent from "../../components/BodyMarkdownContent";
+
+interface IProjectData {
+  id: string;
+  name: string;
+  description: string;
+  displayImage: IDisplayImage;
+  projectUrl: string;
+  githubUrl: string;
+  projectDetails: string;
+  projectStack: string[];
+  projectType: string;
+}
+
+interface IDisplayImage {
+  image: {
+    url: string;
+  };
+  altText: string;
+}
 
 const ProjectDetails = () => {
   const { id: projectId } = useParams() as { id: string };
 
   const [projectName, setProjectName] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
+  const [projectDisplayImage, setProjectDisplayImage] = useState(
+    {} as IDisplayImage
+  );
   const [projectType, setProjectType] = useState("");
-  const [projectStack, setProjectStack] = useState([]);
+  const [projectStack, setProjectStack] = useState([] as string[]);
   const [projectUrl, setProjectUrl] = useState("");
   const [projectGithubUrl, setProjectGithubUrl] = useState("");
   const [projectDetails, setProjectDetails] = useState("");
 
   useEffect(() => {
     const getData = async () => {
-      const project = (await getProject(projectId)).projects[0];
+      try {
+        console.log(projectId);
+        const project = (await getProject(projectId)) as IProjectData;
 
-      setProjectName(project.name);
-      setProjectDescription(project.description);
-      setProjectType(project.projectType);
-      setProjectStack(project.projectStack);
-      setProjectUrl(project.projectUrl);
-      setProjectGithubUrl(project.githubUrl);
-      setProjectDetails(project.projectDetails);
+        setProjectName(project.name);
+        setProjectDescription(project.description);
+        setProjectDisplayImage(project.displayImage);
+        setProjectType(project.projectType);
+        setProjectStack(project.projectStack);
+        setProjectUrl(project.projectUrl);
+        setProjectGithubUrl(project.githubUrl);
+        setProjectDetails(project.projectDetails);
+      } catch (err) {
+        console.log(err);
+      }
     };
     getData();
   }, []);
@@ -60,7 +89,7 @@ const ProjectDetails = () => {
               </article>
             </div>
             <div className={styles.typeAndStackContainer}>
-              <section>
+              <section className={styles.projectType}>
                 <h3>Type</h3>
                 <span>{projectType}</span>
               </section>
@@ -75,8 +104,13 @@ const ProjectDetails = () => {
             </div>
           </section>
           <section className={styles.bodyContent}>
-            <h2>How it works</h2>
-            <small>Project functionality</small>
+            <img
+              src={projectDisplayImage?.image?.url}
+              alt={projectDisplayImage.altText}
+              width={"100%"}
+              height={"100%"}
+            />
+            <BodyMarkdownContent content={projectDetails} />
           </section>
         </main>
       </div>

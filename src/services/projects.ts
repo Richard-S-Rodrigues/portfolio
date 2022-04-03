@@ -9,40 +9,33 @@ const getProjects = async () => {
         id
         name
         description
-        image {
-          id
-          fileName
-          height
-          width
-          url
+        displayImage {
+          image {
+            url
+          }
+          altText
         }
-        projectUrl
-        githubUrl
-        updatedAt
-        publishedAt
-        createdAt
       }
     }
   `;
 
   const response = await request(graphcmsApi, query);
 
-  return response;
+  return response.projects;
 };
 
 const getProject = async (id: string) => {
   const query = gql`
     query MyQuery {
-      projects(where: {id: "${id}"}) {
+      project(where: {id: "${id}"}) {
         id
         name
         description
-        image {
-          id
-          fileName
-          height
-          width
-          url
+        displayImage {
+          image {
+            url
+          }
+          altText
         }
         projectUrl
         githubUrl
@@ -55,7 +48,7 @@ const getProject = async (id: string) => {
 
   const response = await request(graphcmsApi, query);
 
-  return response;
+  return response.project;
 };
 
 export { getProjects, getProject };

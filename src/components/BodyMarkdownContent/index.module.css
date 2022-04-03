@@ -1,0 +1,13 @@
+.container h1,
+.container h2 {
+  margin-top: 4em;
+  margin-bottom: 1em;
+}
+
+.container p {
+  margin-bottom: 1em;
+}
+
+.container img {
+  width: 100%;
+}

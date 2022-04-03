@@ -9,18 +9,12 @@ interface IProjectsData {
   id: string;
   name: string;
   description: string;
-  image: {
-    id: string;
-    fileName: string;
-    height: number;
-    width: number;
-    url: string;
+  displayImage: {
+    image: {
+      url: string;
+    };
+    altText: string;
   };
-  projectUrl: string;
-  githubUrl: string;
-  updatedAt: string;
-  publishedAt: string;
-  createdAt: string;
 }
 
 const ProjectsCard = () => {
@@ -28,28 +22,28 @@ const ProjectsCard = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await getProjects();
-      setProjects(response.projects);
+      const projectsData = await getProjects();
+      setProjects(projectsData);
     };
     getData();
   }, []);
 
   return (
     <div className={styles.container}>
-      {projects.map((project) => (
-        <main key={project.id}>
+      {projects.map(({ id, name, description, displayImage }) => (
+        <main key={id}>
           <section className={styles.imageContainer}>
-            <img src={project.image.url} alt="" />
+            <img src={displayImage.image.url} alt={displayImage.altText} />
           </section>
           <section>
             <div className={styles.descriptionContainer}>
-              <h3>{project.name}</h3>
+              <h3>{name}</h3>
               <article>
-                <p>{project.description}</p>
+                <p>{description}</p>
               </article>
             </div>
             <div className={styles.actionsContainer}>
-              <Link to={`/projects/${project.id}`}>View details</Link>
+              <Link to={`/projects/${id}`}>View details</Link>
             </div>
           </section>
         </main>
